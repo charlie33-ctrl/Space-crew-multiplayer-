@@ -1,5 +1,5 @@
 const express=require('express'); const http=require('http'); const {Server}=require('socket.io'); const path=require('path');
-const app=express(), server=http.createServer(app), io=new Server(server); app.use(express.static(path.join(__dirname,'public')));
+const app=express(), server=http.createServer(app), io=new Server(server); app.use(express.static(path.join(__dirname)));
 const rooms=new Map(); const code=()=>Math.random().toString(36).slice(2,8).toUpperCase();
 const safe=s=>String(s||'Player').replace(/[<>]/g,'').slice(0,14)||'Player';
 function view(r){return {code:r.code,host:r.host,started:r.started,settings:r.settings,players:[...r.players.values()].map(p=>({id:p.id,name:p.name,color:p.color,hat:p.hat,pet:p.pet,alive:p.alive,x:p.x,y:p.y,dead:p.dead,done:p.done}))};}
