@@ -1,0 +1,7 @@
+RAILWAY DATABASE SETUP
+1. Open your Railway SpaceCrew project.
+2. Tap + New, choose Database, then PostgreSQL.
+3. Open your web service -> Variables.
+4. Confirm DATABASE_URL is available/referenced from PostgreSQL.
+5. Redeploy the web service.
+The server creates its profiles table automatically.
